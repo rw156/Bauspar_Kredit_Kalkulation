@@ -67,16 +67,16 @@ def Darlehen_Berechnung(Kredithoehe, Annuitaet, Zins_1, Zins_2, Zins_3, Monate_1
 
     
 if __name__ == "__main__":
-    Kredithoehe = 400000.0
+    Kredithoehe = 100000.0
     Zins_1 = 2.5 # in Prozent
-    Zins_2 = 4.0 # in Prozent
+    Zins_2 = 8.0 # in Prozent
     Zins_3 = 4.0 # in Prozent
     Monate_1 = 120
     Monate_2 = 120
     Anpassungsfrequenz = 12 # in Monaten (mindestens 2!!!)
     Abschlussgebuehr_anteil = 1 # in Prozent
 
-    Annuitaet = 1500
+    Annuitaet = 700
     Max_Sondertilgung = 0.05
     Betrag_Sondertilgungen = Max_Sondertilgung*Kredithoehe
     print('Betrag für Sondertilgungen: ', Betrag_Sondertilgungen)

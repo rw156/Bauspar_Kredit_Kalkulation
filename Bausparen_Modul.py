@@ -167,16 +167,16 @@ def Bauspar_Berechnung(
 
     
 if __name__ == "__main__":
-    Kredithoehe = 400000.0
+    Kredithoehe = 200000.0
     Zinssatz_darlehen = 2.5 # in Prozent
     Zinssatz_Bauspar_Soll = 1.95 # in Prozent
     Zinssatz_Bauspar_Haben = 0.5 # in Prozent
     zuteilungsreif_prozent = 40
     Anpassungsfrequenz = 12 # in Monaten (mindestens 2!!!)
     Abschlussgebuehr_anteil = 1 # in Prozent
-    Darlehen_start_monate = 10 # Darlehen startet soviel Monate nach Bausparbeginn
+    Darlehen_start_monate = 12 # Darlehen startet soviel Monate nach Bausparbeginn
 
-    Annuitaet = 1500
+    Annuitaet = 1000
     Max_Sondertilgung = 0.05
     max_Betrag_Sondertilgungen = 0.2*Max_Sondertilgung*Kredithoehe
     # Sondertilgungen = {
@@ -186,7 +186,8 @@ if __name__ == "__main__":
     Sondertilgungen = []
     resultdict = Bauspar_Berechnung(
         Kredithoehe=Kredithoehe,
-        Annuitaet=Annuitaet
+        Annuitaet=Annuitaet,
+        Darlehen_start_monate=Darlehen_start_monate
     )
     
     Schulden_Darlehen_kumuliert = resultdict['Schulden_Darlehen_kumuliert']

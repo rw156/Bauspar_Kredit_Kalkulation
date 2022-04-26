@@ -39,8 +39,8 @@ plt.title(('Gesamtkosten bei {:.0f} Euro Kredithöhe, {:.0f} Annuität').format(
 plt.show()
 
 # Test Annuität
-Annuitaet_test = np.arange(1200, 1900, 100)
-Summe_test = np.arange(200000, 450000, 50000)
+Annuitaet_test = np.arange(800, 1900, 100)
+Summe_test = np.arange(200000, 350000, 50000)
 Kosten_gesamt_test2 = np.zeros((len(Summe_test), len(Annuitaet_test)))
 for i, summe_iter in enumerate(Summe_test):
     for j, annuitaet_iter in enumerate(Annuitaet_test):
