@@ -52,6 +52,9 @@ def Bauspar_Berechnung(
     # Phase 1: Bausparen bis Kredit benötigt
     while monat_zaehler < Darlehen_start_monate:
         monat_zaehler += 1
+        if monat_zaehler > 1000:
+            result_dict = dict()
+            return result_dict
         Bauspar_Guthaben += Annuitaet
         bezahllt_bisher += Annuitaet
         Bezahlt_kumuliert.append(bezahllt_bisher)
@@ -167,16 +170,16 @@ def Bauspar_Berechnung(
 
     
 if __name__ == "__main__":
-    Kredithoehe = 200000.0
+    Kredithoehe = 100000.0
     Zinssatz_darlehen = 2.5 # in Prozent
     Zinssatz_Bauspar_Soll = 1.95 # in Prozent
     Zinssatz_Bauspar_Haben = 0.5 # in Prozent
     zuteilungsreif_prozent = 40
     Anpassungsfrequenz = 12 # in Monaten (mindestens 2!!!)
-    Abschlussgebuehr_anteil = 1 # in Prozent
+    Abschlussgebuehr_anteil = 1.6 # in Prozent
     Darlehen_start_monate = 12 # Darlehen startet soviel Monate nach Bausparbeginn
 
-    Annuitaet = 1000
+    Annuitaet = 3000
     Max_Sondertilgung = 0.05
     max_Betrag_Sondertilgungen = 0.2*Max_Sondertilgung*Kredithoehe
     # Sondertilgungen = {
