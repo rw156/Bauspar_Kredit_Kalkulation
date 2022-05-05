@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from Bausparen_Berechnungen import Abschlussgebuehr_anteil, Zinssatz_Bauspar_Haben, Zinssatz_Bauspar_Soll
 
-from Bausparen_Modul import Bauspar_Berechnung
+from Bauspar_Darlehen_Kombi_Modul import Bauspar_Berechnung
 from Darlehen_Modul import Darlehen_Berechnung
 
 # Fall 1:

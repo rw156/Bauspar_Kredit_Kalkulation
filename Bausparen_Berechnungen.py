@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-from Bauspar_Darlehen_Kombi_Modul import Bauspar_Berechnung
+from Bauspar_Darlehen_Kombi_Modul import Bauspar_Darlehen_Kombi_Berechnung
 from Darlehen_Modul import Darlehen_Berechnung
 
 Kredithoehe = 200000.0
@@ -20,7 +20,7 @@ Zins_Bauspar_test = np.arange(1.7, 2.2, 0.1)
 Kosten_gesamt = np.zeros((len(Zins_Bauspar_test), len(Zins_Darlehen_test)))
 for i, zins_bauspar_iter in enumerate(Zins_Bauspar_test):
     for j, zins_darlehen_iter in enumerate(Zins_Darlehen_test):
-        resultdict = Bauspar_Berechnung(
+        resultdict = Bauspar_Darlehen_Kombi_Berechnung(
             Kredithoehe=Kredithoehe,
             Annuitaet=Annuitaet,
             Zinssatz_darlehen=zins_darlehen_iter,
@@ -44,7 +44,7 @@ Summe_test = np.arange(200000, 401000, 50000)
 Kosten_gesamt_test2 = np.zeros((len(Summe_test), len(Annuitaet_test)))
 for i, summe_iter in enumerate(Summe_test):
     for j, annuitaet_iter in enumerate(Annuitaet_test):
-        resultdict = Bauspar_Berechnung(
+        resultdict = Bauspar_Darlehen_Kombi_Berechnung(
             Kredithoehe=summe_iter,
             Annuitaet=annuitaet_iter
         )
@@ -70,7 +70,7 @@ resultdict_Darlehen = Darlehen_Berechnung(
     Annuitaet=Annuitaet,
     Zins_1=Zins_1_Darlehen, Zins_2=Zins_2_Darlehen, Zins_3=Zins_3_Darlehen
 )
-resultdict_Bauspar = Bauspar_Berechnung(
+resultdict_Bauspar = Bauspar_Darlehen_Kombi_Berechnung(
     Kredithoehe=Kredithoehe,
     Annuitaet=Annuitaet
 )
@@ -103,11 +103,11 @@ plt.show()
 
 
 # zwei Bausparverträge mit halber Annuität?
-resultdict_voll = Bauspar_Berechnung(
+resultdict_voll = Bauspar_Darlehen_Kombi_Berechnung(
     Kredithoehe=Kredithoehe,
     Annuitaet=Annuitaet)
 
-resultdict_halb = Bauspar_Berechnung(
+resultdict_halb = Bauspar_Darlehen_Kombi_Berechnung(
     Kredithoehe=Kredithoehe/2,
     Annuitaet=Annuitaet/2)
 

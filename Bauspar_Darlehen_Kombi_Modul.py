@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-def Bauspar_Berechnung(
+def Bauspar_Darlehen_Kombi_Berechnung(
     Kredithoehe,
     Annuitaet,
     Zinssatz_darlehen=2.5,
@@ -179,7 +179,7 @@ if __name__ == "__main__":
     Abschlussgebuehr_anteil = 1.6 # in Prozent
     Darlehen_start_monate = 12 # Darlehen startet soviel Monate nach Bausparbeginn
 
-    Annuitaet = 3000
+    Annuitaet = 1000
     Max_Sondertilgung = 0.05
     max_Betrag_Sondertilgungen = 0.2*Max_Sondertilgung*Kredithoehe
     # Sondertilgungen = {
@@ -187,7 +187,7 @@ if __name__ == "__main__":
     #     120: 5000,
     #     180: 10000}
     Sondertilgungen = []
-    resultdict = Bauspar_Berechnung(
+    resultdict = Bauspar_Darlehen_Kombi_Berechnung(
         Kredithoehe=Kredithoehe,
         Annuitaet=Annuitaet,
         Darlehen_start_monate=Darlehen_start_monate
