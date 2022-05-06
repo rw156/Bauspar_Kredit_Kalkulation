@@ -173,7 +173,7 @@ if __name__ == "__main__":
     Kredithoehe = 100000.0
     Zinssatz_darlehen = 2.5 # in Prozent
     Zinssatz_Bauspar_Soll = 1.95 # in Prozent
-    Zinssatz_Bauspar_Haben = 0.5 # in Prozent
+    Zinssatz_Bauspar_Haben = 0.1 # in Prozent
     zuteilungsreif_prozent = 40
     Anpassungsfrequenz = 12 # in Monaten (mindestens 2!!!)
     Abschlussgebuehr_anteil = 1.6 # in Prozent

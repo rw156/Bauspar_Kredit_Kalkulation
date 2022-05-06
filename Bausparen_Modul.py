@@ -1,5 +1,3 @@
-import re
-import numpy as np
 import matplotlib.pyplot as plt
 
 def Bauspar_Berechnung(
@@ -97,15 +95,15 @@ def Bauspar_Berechnung(
 
 
 if __name__=='__main__':
-    Bausparsumme = 200000
-    Annuitaet = 1000
-    # Sonderzahlungen = {
-    #     12: 5000,
-    #     120: 8000
-    # }
-    Sonderzahlungen = dict()
+    Bausparsumme = 300000
+    Annuitaet = 1500
+    Sonderzahlungen = {
+        5: 60000,
+        10: 30000
+    }
+    # Sonderzahlungen = dict()
     Zins_Haben = 0.1
-    Zins_Soll = 1.9
+    Zins_Soll = 1.65
     Abschlussgebuehr_prozent = 1
     Anpassungsfrequenz = 12
 

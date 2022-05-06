@@ -39,7 +39,7 @@ plt.title(('Gesamtkosten bei {:.0f} Euro Kredithöhe, {:.0f} Annuität').format(
 plt.show()
 
 # Test Annuität
-Annuitaet_test = np.arange(1000, 1900, 100)
+Annuitaet_test = np.arange(1200, 2400, 200)
 Summe_test = np.arange(200000, 401000, 50000)
 Kosten_gesamt_test2 = np.zeros((len(Summe_test), len(Annuitaet_test)))
 for i, summe_iter in enumerate(Summe_test):
@@ -56,6 +56,16 @@ for i, summe_iter in enumerate(Summe_test):
 plt.grid()
 plt.legend()
 plt.xlabel('Annuitaet in Euro')
+plt.ylabel('Gesamtkosten')
+plt.title(('Gesamtkosten bei\n{:.1f} Prozent Darlehenszins, {:.1f} Prozent Bausparzins').format(Zinssatz_darlehen, Zinssatz_Bauspar_Soll))
+plt.show()
+
+plt.figure()
+for j, annuitaet_iter in enumerate(Annuitaet_test):
+    plt.plot(Summe_test, Kosten_gesamt_test2[:,j], label=('Annuität = {:.0f}').format(annuitaet_iter))
+plt.grid()
+plt.legend()
+plt.xlabel('Höhe in Euro')
 plt.ylabel('Gesamtkosten')
 plt.title(('Gesamtkosten bei\n{:.1f} Prozent Darlehenszins, {:.1f} Prozent Bausparzins').format(Zinssatz_darlehen, Zinssatz_Bauspar_Soll))
 plt.show()
