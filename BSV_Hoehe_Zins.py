@@ -44,11 +44,11 @@ def Restzins(Summe, Annu, Zins):
     
     return Zins_ges, monat_zaehler
 
-ges = 400000
+ges = 450000
 BSV_test        = [250000, 275000, 300000, 325000, 350000, 375000, 400000]
 zuteilung_test  = [42,     47,     51,     56,     60,     65,     68]
-Annu = 2000
-Zins_kredit_test = [2, 3, 4, 5]
+Annu = 3000
+Zins_kredit_test = [1, 2, 3, 4, 5]
 
 Gesamt_zins_test = np.zeros((len(BSV_test), len(Zins_kredit_test)))
 for i in range(len(BSV_test)):
