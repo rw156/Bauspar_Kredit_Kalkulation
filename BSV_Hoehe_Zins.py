@@ -70,9 +70,38 @@ for i in range(len(BSV_test)):
 
 plt.figure()
 for j in range(len(Zins_kredit_test)):
-    plt.plot(BSV_test, Gesamt_zins_test[:, j], label=str(Zins_kredit_test[j]))
+    plt.plot(BSV_test, Gesamt_zins_test[:, j], label='Zins: ' + str(Zins_kredit_test[j]) + '%')
 plt.grid()
 plt.legend()
 plt.show()
 
 
+sofortzahlung_test = [0, 20000, 40000, 60000]
+schneller_BSV_durch_sofort = [0, 6, 12, 18]
+# schneller_BSV_durch_sofort = [0, 12, 24, 36]
+BSV = 350000
+zuteilung_nach = 51
+Gesamt_zins_test2 = np.zeros((len(sofortzahlung_test), len(Zins_kredit_test)))
+for i in range(len(sofortzahlung_test)):
+    Kredit_tmp = ges - sofortzahlung_test[-(i+1)]
+    for j in range(len(Zins_kredit_test)):
+        zuteilungsreif_tmp = zuteilung_nach-schneller_BSV_durch_sofort[i]
+        zins_Zwischen_temp2 = Zwischenzins(ges, Zins_kredit_test[j], zuteilungsreif_tmp)
+        summe_rest2 = Kredit_tmp - BSV
+        if summe_rest > 0:
+            Annu_rest = Annu / 2
+            Annu_BSV_1 = Annu / 2
+        else:
+            Annu_rest = 0
+            Annu_BSV_1 = Annu
+        zins_Rest2, monate_rest2 = Restzins(summe_rest2, Annu_rest, Zins_kredit_test[j])
+        zins_BSV_tmp2 = BSV_phase2(BSV, Annu_BSV_1, Annu, monate_rest2)
+        summe = zins_Zwischen_temp2 + zins_Rest2 + zins_BSV_tmp2
+        Gesamt_zins_test2[i, j] = summe
+
+plt.figure()
+for j in range(len(Zins_kredit_test)):
+    plt.plot(sofortzahlung_test, Gesamt_zins_test2[:, j], label='Zins: ' + str(Zins_kredit_test[j]) + '%')
+plt.grid()
+plt.legend()
+plt.show()
