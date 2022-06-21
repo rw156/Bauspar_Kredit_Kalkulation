@@ -47,6 +47,7 @@ def Restzins(Summe, Annu, Zins):
 ges = 450000
 BSV_test        = [250000, 275000, 300000, 325000, 350000, 375000, 400000]
 zuteilung_test  = [42,     47,     51,     56,     60,     65,     68]
+# zuteilung_test  = [40,     50,     60,     70,     80,     90,     100]
 Annu = 2000
 Zins_kredit_test = [1, 2, 3, 4, 5]
 
@@ -76,11 +77,10 @@ plt.legend()
 plt.show()
 
 
-sofortzahlung_test = [0, 20000, 40000, 60000]
-schneller_BSV_durch_sofort = [0, 6, 12, 18]
-# schneller_BSV_durch_sofort = [0, 12, 24, 36]
+sofortzahlung_test = [0, 20000, 30000, 40000, 60000]
+schneller_BSV_durch_sofort = [0, 6, 9, 12, 18]
 BSV = 350000
-zuteilung_nach = 51
+zuteilung_nach = 60
 Gesamt_zins_test2 = np.zeros((len(sofortzahlung_test), len(Zins_kredit_test)))
 for i in range(len(sofortzahlung_test)):
     Kredit_tmp = ges - sofortzahlung_test[-(i+1)]
@@ -104,4 +104,7 @@ for j in range(len(Zins_kredit_test)):
     plt.plot(sofortzahlung_test, Gesamt_zins_test2[:, j], label='Zins: ' + str(Zins_kredit_test[j]) + '%')
 plt.grid()
 plt.legend()
+plt.xlabel('Sofortzahlung in BSV')
+plt.ylabel('Gesamtzins')
+plt.title('BSV Summe: ' + str(BSV))
 plt.show()
