@@ -95,13 +95,13 @@ def Bauspar_Berechnung(
 
 
 if __name__=='__main__':
-    Bausparsumme = 300000
-    Annuitaet = 1500
-    Sonderzahlungen = {
-        5: 60000,
-        10: 30000
-    }
-    # Sonderzahlungen = dict()
+    Bausparsumme = 100000
+    Annuitaet = 1000
+    # Sonderzahlungen = {
+    #     5: 60000,
+    #     10: 30000
+    # }
+    Sonderzahlungen = dict()
     Zins_Haben = 0.1
     Zins_Soll = 1.65
     Abschlussgebuehr_prozent = 1
