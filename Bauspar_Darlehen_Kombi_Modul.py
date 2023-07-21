@@ -5,12 +5,12 @@ def Bauspar_Darlehen_Kombi_Berechnung(
     Kredithoehe,
     Annuitaet,
     Zinssatz_darlehen=2.5,
-    Zinssatz_Bauspar_Soll=1.95,
-    Zinssatz_Bauspar_Haben=1.0,
-    zuteilungsreif_prozent=40,
+    Zinssatz_Bauspar_Soll=1.19,
+    Zinssatz_Bauspar_Haben=0.01,
+    zuteilungsreif_prozent=45,
     Abschlussgebuehr_anteil=1,
     Anpassungsfrequenz=12,
-    Darlehen_start_monate = 0,
+    Darlehen_start_monate = 20,
     Sondertilgungen=[]):
 
     Tilgung_Darlehen_monatlich = []
@@ -170,16 +170,16 @@ def Bauspar_Darlehen_Kombi_Berechnung(
 
     
 if __name__ == "__main__":
-    Kredithoehe = 100000.0
-    Zinssatz_darlehen = 2.5 # in Prozent
-    Zinssatz_Bauspar_Soll = 1.95 # in Prozent
-    Zinssatz_Bauspar_Haben = 0.1 # in Prozent
-    zuteilungsreif_prozent = 40
+    Kredithoehe = 300000.0
+    Zinssatz_darlehen = 3.5 # in Prozent
+    Zinssatz_Bauspar_Soll = 1.19 # in Prozent
+    Zinssatz_Bauspar_Haben = 0.01 # in Prozent
+    zuteilungsreif_prozent = 45
     Anpassungsfrequenz = 12 # in Monaten (mindestens 2!!!)
     Abschlussgebuehr_anteil = 1.6 # in Prozent
-    Darlehen_start_monate = 12 # Darlehen startet soviel Monate nach Bausparbeginn
+    Darlehen_start_monate = 24 # Darlehen startet soviel Monate nach Bausparbeginn
 
-    Annuitaet = 1000
+    Annuitaet = 2000
     Max_Sondertilgung = 0.05
     max_Betrag_Sondertilgungen = 0.2*Max_Sondertilgung*Kredithoehe
     # Sondertilgungen = {
@@ -210,7 +210,7 @@ if __name__ == "__main__":
     Sondertilgungen_gesamt = resultdict['Sondertilgungen_gesamt']
 
     plt.figure()
-    plt.plot(Schulden_Darlehen_kumuliert, label='Darlehen')
+    plt.plot(np.arange(Darlehen_start_monate, Anzahl_monate+1, 1), Schulden_Darlehen_kumuliert, label='Darlehen')
     plt.plot(Bauspar_Guthaben_kumuliert, label='Bausparguthaben')
     plt.plot(Zinsen_Darlehen_kumuliert, label='Darlehenszinsen')
     plt.plot(Zinsen_Bauspar_kumuliert, label='Bausparzinsen')
