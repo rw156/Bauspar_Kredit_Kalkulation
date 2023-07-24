@@ -95,17 +95,17 @@ def Bauspar_Berechnung(
 
 
 if __name__=='__main__':
-    Bausparsumme = 100000
-    Annuitaet = 1000
-    # Sonderzahlungen = {
-    #     5: 60000,
-    #     10: 30000
-    # }
-    Sonderzahlungen = dict()
-    Zins_Haben = 0.1
+    Bausparsumme = 120000
+    Annuitaet = 600
+    Sonderzahlungen = {
+        1: 20000
+    }
+    # Sonderzahlungen = dict()
+    Zins_Haben = 0.01
     Zins_Soll = 1.65
-    Abschlussgebuehr_prozent = 1
+    Abschlussgebuehr_prozent = 1.6
     Anpassungsfrequenz = 12
+    zuteilungsreif_prozent = 32
 
     resultdict = Bauspar_Berechnung(
         Bausparsumme=Bausparsumme,
@@ -114,7 +114,8 @@ if __name__=='__main__':
         Zins_Haben=Zins_Haben,
         Zins_Soll=Zins_Soll,
         Abschlussgebuehr_prozent=Abschlussgebuehr_prozent,
-        Anpassungsfrequenz=Anpassungsfrequenz
+        Anpassungsfrequenz=Anpassungsfrequenz,
+        zuteilungsreif_prozent=zuteilungsreif_prozent
     )
 
     Tilgung_monatlich = resultdict['Tilgung_monatlich']
